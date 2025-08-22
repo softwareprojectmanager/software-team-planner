@@ -1,7 +1,7 @@
 # Site Ayarları
-title: Yazılım Ekip Planlama
-description: "Yazılım ekipleri için kaynak planlama rehberi ve demo araçları"
-baseurl: "/yazilim-ekibi-planlama"
+title: Software Team Planner
+description: "Resource planning guide and demo tools for software teams"
+baseurl: "/software-team-planner"  # ← Burası değişti
 url: "https://softwareprojectmanager.github.io"
 
 # Tema
@@ -9,13 +9,13 @@ remote_theme: daattali/beautiful-jekyll
 
 # Navigasyon Menüsü
 navbar-links:
-  Ana Sayfa: ""
+  Home: ""
   Blog: "blog"
   Demo: "demo" 
-  Kategoriler: "tags"
-  Hakkında: "hakkinda"
+  Categories: "tags"
+  About: "about"
 
-# Site Ayarları
+# Site Renkleri (Sedefli beyaz tonlar)
 navbar-col: "#FFFFFF"
 navbar-text-col: "#2C3E50"
 navbar-border-col: "#E8F4F8"
@@ -26,7 +26,7 @@ hover-col: "#2980B9"
 footer-col: "#F8F9FA"
 footer-text-col: "#6C757D"
 
-# Sosyal Medya (opsiyonel)
+# Sosyal Medya
 social-network-links:
   github: softwareprojectmanager
 
@@ -51,6 +51,6 @@ permalink: /:year-:month-:day-:title/
 
 # Beautiful Jekyll Ayarları
 beautifuljekyll-theme:
-  subtitle: "Ekip kaynaklarını optimize edin"
+  subtitle: "Optimize your team resources efficiently"
   show-avatar: false
   nav-short: true
