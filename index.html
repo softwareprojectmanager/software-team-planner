@@ -1,0 +1,71 @@
+---
+layout: home
+title: Yazılım Ekip Planlama
+subtitle: Ekip kaynaklarını verimli kullanmak için rehber ve araçlar
+use-site-title: true
+---
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="main-content">
+      
+      <div class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px;">
+        <h1 style="color: white; margin-bottom: 20px;">🚀 Yazılım Ekip Kaynak Planlama</h1>
+        <p style="font-size: 1.2em; margin-bottom: 25px;">4 adımda ekip kaynaklarınızı optimize edin, projelerinizi başarıya ulaştırın.</p>
+        <a href="{{ site.baseurl }}/demo" class="btn btn-light btn-lg">Demo'yu Deneyin</a>
+        <a href="{{ site.baseurl }}/blog" class="btn btn-outline-light btn-lg" style="margin-left: 10px;">Blog Yazıları</a>
+      </div>
+
+      <div class="row features">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div class="card-body text-center">
+              <i class="fas fa-users fa-3x text-primary mb-3"></i>
+              <h5>Ekip Yönetimi</h5>
+              <p>Ekip üyelerinin becerilerini ve müsaitlik durumlarını optimize edin.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div class="card-body text-center">
+              <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
+              <h5>Kaynak Optimizasyonu</h5>
+              <p>Proje gereksinimlerinize göre kaynakları en verimli şekilde dağıtın.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <div class="card-body text-center">
+              <i class="fas fa-cogs fa-3x text-info mb-3"></i>
+              <h5>İnteraktif Demo</h5>
+              <p>4 adımda gerçek zamanlı kaynak planlama simülasyonu yapın.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="sidebar">
+      <div class="card" style="border: none; background: #f8f9fa;">
+        <div class="card-header" style="background: white; border-bottom: 2px solid #e9ecef;">
+          <h5><i class="fas fa-newspaper"></i> Son Yazılar</h5>
+        </div>
+        <div class="card-body">
+          {% for post in site.posts limit:3 %}
+            <div class="mb-3">
+              <h6><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h6>
+              <small class="text-muted">{{ post.date | date: "%d %B %Y" }}</small>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
