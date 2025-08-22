@@ -1,0 +1,17 @@
+title: Yazılım Ekip Planlama
+description: Yazılım ekipleri için kaynak planlama rehberi
+baseurl: "/yazilim-ekibi-planlama"
+url: "https://softwareprojectmanager.github.io"
+
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+header_pages:
+  - blog.md
+  - demo.md
+  - hakkinda.md
