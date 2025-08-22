@@ -1,17 +1,56 @@
+# Site Ayarları
 title: Yazılım Ekip Planlama
-description: Yazılım ekipleri için kaynak planlama rehberi
+description: "Yazılım ekipleri için kaynak planlama rehberi ve demo araçları"
 baseurl: "/yazilim-ekibi-planlama"
 url: "https://softwareprojectmanager.github.io"
 
+# Tema
+remote_theme: daattali/beautiful-jekyll
+
+# Navigasyon Menüsü
+navbar-links:
+  Ana Sayfa: ""
+  Blog: "blog"
+  Demo: "demo" 
+  Kategoriler: "tags"
+  Hakkında: "hakkinda"
+
+# Site Ayarları
+navbar-col: "#FFFFFF"
+navbar-text-col: "#2C3E50"
+navbar-border-col: "#E8F4F8"
+page-col: "#FFFFFF"
+text-col: "#2C3E50"
+link-col: "#3498DB"
+hover-col: "#2980B9"
+footer-col: "#F8F9FA"
+footer-text-col: "#6C757D"
+
+# Sosyal Medya (opsiyonel)
+social-network-links:
+  github: softwareprojectmanager
+
+# Blog Ayarları
+excerpt_length: 50
+feed_show_excerpt: true
+feed_show_tags: true
+
+# SEO
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Markdown
 markdown: kramdown
 highlighter: rouge
-theme: minima
+permalink: /:year-:month-:day-:title/
 
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-
-header_pages:
-  - blog.md
-  - demo.md
-  - hakkinda.md
+# Beautiful Jekyll Ayarları
+beautifuljekyll-theme:
+  subtitle: "Ekip kaynaklarını optimize edin"
+  show-avatar: false
+  nav-short: true
