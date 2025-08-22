@@ -1,0 +1,1 @@
+# yazilim-ekibi-planlama
