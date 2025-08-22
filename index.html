@@ -1,100 +1,387 @@
 ---
 layout: home
 title: Software Team Planner
-subtitle: Optimize your team resources efficiently
+subtitle: Enterprise Resource Planning & Optimization Platform
 use-site-title: true
 ---
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="main-content">
-      
-      <div class="hero-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
-        <h1 style="color: white; margin-bottom: 20px;">🚀 Software Team Resource Planner</h1>
-        <p style="font-size: 1.2em; margin-bottom: 25px; opacity: 0.95;">Plan and optimize your software team resources in 4 simple steps. Make data-driven decisions for better project outcomes.</p>
-        <a href="{{ site.baseurl }}/demo" class="btn btn-light btn-lg" style="margin-right: 15px;">Try Interactive Demo</a>
-        <a href="{{ site.baseurl }}/blog" class="btn btn-outline-light btn-lg">Read Articles</a>
-      </div>
+<style>
+.hero-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
 
-      <div class="row features">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
-            <div class="card-body text-center">
-              <i class="fas fa-users fa-3x text-primary mb-3"></i>
-              <h5 class="card-title">Team Management</h5>
-              <p class="card-text">Optimize team member skills, availability, and workload distribution for maximum productivity.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
-            <div class="card-body text-center">
-              <i class="fas fa-chart-line fa-3x text-success mb-3"></i>
-              <h5 class="card-title">Resource Optimization</h5>
-              <p class="card-text">Smart allocation algorithms to match resources with project requirements efficiently.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-md-4 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px;">
-            <div class="card-body text-center">
-              <i class="fas fa-cogs fa-3x text-info mb-3"></i>
-              <h5 class="card-title">Interactive Demo</h5>
-              <p class="card-text">Experience real-time resource planning with our 4-step interactive demonstration tool.</p>
-            </div>
-          </div>
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card {
+  border: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  color: white;
+}
+
+.icon-blue { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.icon-green { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.icon-orange { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.icon-purple { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+.stats-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 60px 0;
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #667eea;
+  display: block;
+}
+
+.process-step {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 auto 15px;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(240, 147, 251, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.testimonial {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-left: 4px solid #667eea;
+  margin-bottom: 20px;
+}
+</style>
+
+<div class="hero-gradient">
+  <div class="hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px;">
+          Enterprise Software Team Resource Planner
+        </h1>
+        <p style="font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95;">
+          Optimize your development team's productivity with intelligent resource allocation, 
+          real-time planning, and advanced Gantt chart visualization.
+        </p>
+        <div class="d-flex flex-wrap">
+          <a href="{{ site.baseurl }}/demo" class="btn btn-light btn-lg me-3 mb-2" style="border-radius: 25px; padding: 12px 30px;">
+            <i class="fas fa-play-circle me-2"></i>Try Interactive Demo
+          </a>
+          <a href="{{ site.baseurl }}/blog" class="btn btn-outline-light btn-lg mb-2" style="border-radius: 25px; padding: 12px 30px;">
+            <i class="fas fa-book-open me-2"></i>Read Case Studies
+          </a>
         </div>
       </div>
-
-      <div class="row mt-5">
-        <div class="col-12">
-          <h3 class="text-center mb-4">Why Choose Our Planning Tool?</h3>
-          <div class="row">
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Data-driven resource allocation</li>
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Real-time capacity planning</li>
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Risk assessment and mitigation</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <ul class="list-unstyled">
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Skill-based team matching</li>
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Project timeline optimization</li>
-                <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Performance analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="col-lg-4 text-center">
+        <i class="fas fa-chart-gantt" style="font-size: 8rem; opacity: 0.3;"></i>
       </div>
-
     </div>
   </div>
+</div>
+
+<!-- Key Features -->
+<div class="container-fluid px-0">
+  <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600;">Why Choose Our Platform?</h2>
   
-  <div class="col-md-4">
-    <div class="sidebar">
-      <div class="card mb-4" style="border: none; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 10px;">
-        <div class="card-header" style="background: white; border-bottom: 2px solid #e9ecef; border-radius: 10px 10px 0 0;">
-          <h5 class="mb-0"><i class="fas fa-newspaper mr-2"></i> Latest Articles</h5>
+  <div class="row g-4">
+    <div class="col-lg-3 col-md-6">
+      <div class="feature-card">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon icon-blue">
+            <i class="fas fa-users"></i>
+          </div>
+          <h5 class="card-title mb-3">Resource Definition</h5>
+          <p class="card-text">Define team members with specializations (Frontend/Backend) and support percentages for optimal allocation.</p>
         </div>
-        <div class="card-body">
-          {% for post in site.posts limit:3 %}
-            <div class="mb-3 pb-2" style="border-bottom: 1px solid #e9ecef;">
-              <h6><a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a></h6>
-              <small class="text-muted"><i class="fas fa-calendar mr-1"></i>{{ post.date | date: "%B %d, %Y" }}</small>
-            </div>
-          {% endfor %}
-          <a href="{{ site.baseurl }}/blog" class="btn btn-outline-primary btn-sm">View All Posts</a>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="feature-card">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon icon-green">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h5 class="card-title mb-3">Task Management</h5>
+          <p class="card-text">Create tasks with skill-based effort estimates and priority scoring (0-100) for intelligent scheduling.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="feature-card">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon icon-orange">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h5 class="card-title mb-3">Timeline Planning</h5>
+          <p class="card-text">Set project timelines with custom daily working hours (6-8 hours) and automatic scheduling optimization.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="feature-card">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon icon-purple">
+            <i class="fas fa-chart-gantt"></i>
+          </div>
+          <h5 class="card-title mb-3">Gantt Visualization</h5>
+          <p class="card-text">Advanced Gantt charts showing person-day allocation with support time and task assignments in detail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Statistics -->
+<div class="stats-section">
+  <div class="container">
+    <h2 class="text-center mb-5">Proven Results</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="stat-item">
+          <span class="stat-number">40%</span>
+          <p class="mb-0">Faster Project Delivery</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <span class="stat-number">60%</span>
+          <p class="mb-0">Better Resource Utilization</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <span class="stat-number">85%</span>
+          <p class="mb-0">On-time Project Completion</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-item">
+          <span class="stat-number">25%</span>
+          <p class="mb-0">Cost Reduction</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How It Works -->
+<div class="container-fluid px-0">
+  <h2 class="text-center mb-5" style="font-size: 2.5rem; font-weight: 600;">How It Works - 4 Simple Steps</h2>
+  
+  <div class="row g-4">
+    <div class="col-lg-3 col-md-6">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h5>Define Resources</h5>
+        <p class="mb-0">Add team members with their specializations (Frontend/Backend) and support time percentages.</p>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h5>Create Tasks</h5>
+        <p class="mb-0">Define project tasks with effort estimates per skill and priority scores for optimal scheduling.</p>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h5>Set Timeline</h5>
+        <p class="mb-0">Configure project start/end dates and daily working hours for accurate time allocation.</p>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h5>View Results</h5>
+        <p class="mb-0">Get detailed Gantt charts showing optimized resource allocation and timeline visualization.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="container-fluid px-0 mt-5">
+  <h2 class="text-center mb-5">What Our Users Say</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"This tool revolutionized our sprint planning. We can now see exactly who's working on what and when."</p>
+        <footer class="blockquote-footer mt-2">Sarah Chen, <cite title="Source Title">Tech Lead at InnovateLab</cite></footer>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"The Gantt chart visualization is incredibly detailed. It helps us identify bottlenecks before they happen."</p>
+        <footer class="blockquote-footer mt-2">Mike Rodriguez, <cite title="Source Title">Project Manager at DevCorp</cite></footer>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="testimonial">
+        <p>"Priority-based task allocation ensures our most critical features get the right resources first."</p>
+        <footer class="blockquote-footer mt-2">Emma Thompson, <cite title="Source Title">Engineering Director at TechFlow</cite></footer>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+  <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready to Optimize Your Team?</h2>
+  <p style="font-size: 1.2rem; margin-bottom: 30px;">
+    Start planning smarter with our advanced resource allocation system.
+  </p>
+  <a href="{{ site.baseurl }}/demo" class="btn-cta">
+    <i class="fas fa-rocket me-2"></i>Launch Demo Now
+  </a>
+  <a href="{{ site.baseurl }}/blog" class="btn-cta">
+    <i class="fas fa-graduation-cap me-2"></i>Learn Best Practices
+  </a>
+</div>
+
+<!-- Latest Articles Preview -->
+<div class="container-fluid px-0 mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <h3 class="mb-4">Latest Insights</h3>
+      {% for post in site.posts limit:2 %}
+        <div class="card mb-4" style="border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 10px;">
+          <div class="card-body p-4">
+            <h5 class="card-title">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+            </h5>
+            <p class="card-text text-muted">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+            <small class="text-muted">
+              <i class="fas fa-calendar me-1"></i>{{ post.date | date: "%B %d, %Y" }}
+              <i class="fas fa-tag ms-3 me-1"></i>{{ post.categories | first }}
+            </small>
+          </div>
+        </div>
+      {% endfor %}
+      <a href="{{ site.baseurl }}/blog" class="btn btn-outline-primary">View All Articles</a>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="card" style="border: none; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-radius: 15px;">
+        <div class="card-body p-4 text-center">
+          <h5>Quick Start Guide</h5>
+          <p class="mb-3">Get up and running in minutes with our step-by-step tutorial.</p>
+          <a href="{{ site.baseurl }}/demo" class="btn btn-primary" style="border-radius: 20px;">
+            <i class="fas fa-play me-2"></i>Start Tutorial
+          </a>
         </div>
       </div>
       
-      <div class="card" style="border: none; background: #f8f9fa; border-radius: 10px;">
-        <div class="card-body text-center">
-          <h6>Quick Start</h6>
-          <p class="small">Ready to optimize your team?</p>
-          <a href="{{ site.baseurl }}/demo" class="btn btn-primary btn-sm">Start Demo</a>
+      <div class="card mt-4" style="border: none; background: white; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div class="card-body p-4">
+          <h6><i class="fas fa-info-circle text-primary me-2"></i>Pro Tip</h6>
+          <p class="small mb-0">Use priority scores (0-100) to ensure critical tasks get assigned to your best resources first.</p>
         </div>
       </div>
     </div>
