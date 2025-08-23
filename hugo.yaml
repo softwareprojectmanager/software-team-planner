@@ -1,0 +1,55 @@
+baseURL: 'https://username.github.io/repo-name'  # Kendi repo'nuz
+languageCode: 'en-us'
+title: 'Software Team Planning & Resource Optimization'
+theme: 'PaperMod'
+
+paginate: 10
+enableRobotsTXT: true
+buildDrafts: false
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+    - identifier: posts
+      name: Blog
+      url: /posts/
+      weight: 2
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 3
+
+params:
+  env: production
+  title: "Software Planning Excellence"
+  description: "Insights on software team resource planning and development optimization"
+  keywords: [software planning, team management, agile, scrum]
+  author: "Planning Expert"
+  
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  
+  homeInfoParams:
+    Title: "Software Planning Framework"
+    Content: "Comprehensive analysis of software development planning problems and systematic solutions"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/username/repo-name"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: github
+    lineNos: true
+    codeFences: true
