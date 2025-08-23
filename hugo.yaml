@@ -1,59 +1,24 @@
 baseURL: 'https://softwareprojectmanager.github.io/software-team-planner'
-languageCode: 'en-us' 
+languageCode: 'en-us'
 title: 'Software Planning Excellence'
-# theme: 'PaperMod'    ← COMMENT ET
 
+# NO THEME - minimal setup
 paginate: 10
-enableRobotsTXT: true
-
-# Jekyll uyumluluğu için
-contentDir: "."
-# layoutDir: "themes/PaperMod/layouts"  ← COMMENT ET
-
-# Jekyll posts'ları oku
-permalinks:
-  posts: "/:year/:month/:day/:title/"
-
-# _posts klasörünü content gibi kullan
-staticDir: ["static"]
 
 menu:
   main:
-    - identifier: home
-      name: Home
+    - name: Home
       url: /
-      weight: 10
-    - identifier: posts
-      name: Blog
+      weight: 1
+    - name: Posts
       url: /posts/
-      weight: 20
-
-params:
-  env: production
-  title: "Software Planning Excellence"
-  description: "Insights on software team resource planning"
-  
-  defaultTheme: auto
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true
-  
-  homeInfoParams:
-    Title: "Software Planning Framework"
-    Content: "Comprehensive analysis and solutions for software development planning"
-
-# Jekyll post'ları için
-taxonomies:
-  category: categories
-  tag: tags
+      weight: 2
 
 markup:
   goldmark:
     renderer:
       unsafe: true
-  highlight:
-    style: github
-    lineNos: true
-    codeFences: true
+
+# Basic params
+params:
+  description: "Software planning insights"
