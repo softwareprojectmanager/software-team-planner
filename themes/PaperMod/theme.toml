@@ -1,0 +1,8 @@
+name = "PaperMod"
+license = "MIT"
+description = "A fast, clean, responsive Hugo theme"
+homepage = "https://github.com/adityatelange/hugo-PaperMod"
+min_version = "0.112.0"
+
+[author]
+  name = "Aditya Telange"
