@@ -1,8 +1,9 @@
-name: Deploy Hugo to GitHub Pages
+name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -34,38 +35,15 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-- name: Prepare Jekyll Posts for Hugo
-  run: |
-    mkdir -p content/posts
-    
-    # Her _posts dosyasını content/posts'a kopyala
-    for file in _posts/*.md; do
-      if [ -f "$file" ]; then
-        # Dosya ismini düzenle
-        basename=$(basename "$file" .md)
-        cp "$file" "content/posts/$basename.md"
-        echo "Copied: $file -> content/posts/$basename.md"
-      fi
-    done
-    
-    # Front matter kontrol et
-    cd content/posts
-    for file in *.md; do
-      if ! grep -q "^---" "$file"; then
-        # Front matter yoksa ekle
-        echo "Adding front matter to $file"
-        cat > temp.md << 'EOF'
----
-title: "$(echo $file | sed 's/-/ /g' | sed 's/.md//' | sed 's/\b\w/\U&/g')"
-date: 2024-01-01
-draft: false
----
-
-EOF
-        cat "$file" >> temp.md
-        mv temp.md "$file"
-      fi
-    done
+      - name: Prepare Jekyll Posts for Hugo
+        run: |
+          mkdir -p content/posts
+          if [ -d "_posts" ]; then
+            find _posts -name "*.md" -exec cp {} content/posts/ \;
+            echo "Copied posts from _posts to content/posts"
+          else
+            echo "No _posts directory found"
+          fi
 
       - name: Build with Hugo
         env:
