@@ -1,17 +1,46 @@
 ---
 layout: home
 title: Software Team Planner
-subtitle: The Ultimate Resource Optimization Platform
+subtitle: Why Are Your Software Projects Always Delayed?
 use-site-title: true
 ---
 
 <style>
-/* Modern Desktop-First Responsive Design */
+/* Modern Color Palette */
+:root {
+  --primary: #FF6B35;     /* Orange - Action/Energy */
+  --secondary: #28A745;   /* Green - Success/Money */
+  --tertiary: #007BFF;    /* Blue - Trust/Technology */
+  --accent: #FFC107;      /* Yellow - Attention */
+  --background: #F8F9FA;  /* Light gray */
+  --text: #212529;        /* Dark gray */
+  --white: #FFFFFF;
+  --light: #F1F3F4;
+  --border: #E9ECEF;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography System */
+body {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Roboto', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 80px 0;
-  margin: -30px -15px 60px -15px;
+  background: linear-gradient(135deg, var(--primary) 0%, #E55B2B 100%);
+  color: var(--white);
+  padding: 100px 0 80px;
   position: relative;
   overflow: hidden;
 }
@@ -23,282 +52,343 @@ use-site-title: true
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,200 1000,1000 0,800"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,0 1000,200 1000,1000 0,800"/></svg>');
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  text-align: center;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 .hero-title {
-  font-size: 3.8rem;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 30px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
-  font-weight: 300;
-  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
   opacity: 0.95;
-  line-height: 1.6;
-  max-width: 600px;
 }
 
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
-  margin-top: 50px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.stat-item {
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.btn-hero {
-  background: white;
-  color: #667eea;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-right: 20px;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255,255,255,0.3);
-}
-
-.btn-hero:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255,255,255,0.4);
-  color: #667eea;
-}
-
-.btn-hero-outline {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  transition: all 0.3s ease;
-}
-
-.btn-hero-outline:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-2px);
-}
-
-/* Problem/Solution Section */
-.problem-solution {
-  padding: 80px 0;
-  background: #fafbfc;
-}
-
-.section-title {
-  font-size: 2.8rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  text-align: center;
-  color: #6c757d;
-  margin-bottom: 60px;
-  max-width: 600px;
+.hero-description {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.problem-card, .solution-card {
-  background: white;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  height: 100%;
-  transition: all 0.3s ease;
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.problem-card {
-  border-left: 5px solid #e74c3c;
-}
-
-.solution-card {
-  border-left: 5px solid #27ae60;
-}
-
-.problem-card:hover, .solution-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.problem-card .card-icon {
-  color: #e74c3c;
-}
-
-.solution-card .card-icon {
-  color: #27ae60;
-}
-
-.card-title {
-  font-size: 1.5rem;
+/* CTA Buttons */
+.btn-cta {
+  padding: 16px 32px;
+  border-radius: 50px;
   font-weight: 600;
-  margin-bottom: 20px;
-  color: #2c3e50;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
 }
 
-.feature-list {
-  list-style: none;
-  padding: 0;
+.btn-primary {
+  background: var(--white);
+  color: var(--primary);
 }
 
-.feature-list li {
-  padding: 8px 0;
-  padding-left: 30px;
-  position: relative;
-  color: #5a6c7d;
-  line-height: 1.6;
+.btn-primary:hover {
+  background: var(--light);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
 }
 
-.feature-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-weight: bold;
+.btn-secondary {
+  background: var(--secondary);
+  color: var(--white);
 }
 
-/* Technology Section */
-.technology-section {
+.btn-secondary:hover {
+  background: #218838;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+.btn-tertiary {
+  background: var(--tertiary);
+  color: var(--white);
+}
+
+.btn-tertiary:hover {
+  background: #0056b3;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  text-decoration: none;
+}
+
+/* Problem Statement Section */
+.problem-section {
   padding: 80px 0;
-  background: white;
+  background: var(--white);
 }
 
-.tech-grid {
+.problem-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: var(--text);
+}
+
+.problems-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto 60px;
 }
 
-.tech-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+.problem-item {
+  background: #FFF5F5;
+  border-left: 4px solid #DC3545;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.problem-item .icon {
+  font-size: 2.5rem;
+  color: #DC3545;
+  margin-bottom: 15px;
+}
+
+.problem-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #DC3545;
+}
+
+.solution-highlight {
+  background: linear-gradient(135deg, var(--secondary) 0%, #20c997 100%);
+  color: var(--white);
   padding: 40px;
   border-radius: 15px;
   text-align: center;
+  margin-top: 40px;
+}
+
+.solution-highlight h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
+/* Solution Showcase Section */
+.solution-section {
+  padding: 80px 0;
+  background: var(--background);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: var(--text);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
 }
 
-.tech-card:hover {
-  border-color: #667eea;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.1);
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-.tech-icon {
+.solution-card.demo-card {
+  border-color: var(--primary);
+}
+
+.solution-card.blog-card {
+  border-color: var(--tertiary);
+}
+
+.solution-card.contact-card {
+  border-color: var(--secondary);
+}
+
+.solution-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 25px;
-  font-size: 2rem;
-  color: white;
-}
-
-.tech-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #2c3e50;
-}
-
-.tech-description {
-  color: #6c757d;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: white;
-  padding: 80px 0;
-  text-align: center;
-  margin: 60px -15px -30px -15px;
-}
-
-.cta-title {
   font-size: 2.5rem;
-  font-weight: 600;
+  color: var(--white);
+}
+
+.icon-demo {
+  background: linear-gradient(135deg, var(--primary) 0%, #E55B2B 100%);
+}
+
+.icon-blog {
+  background: linear-gradient(135deg, var(--tertiary) 0%, #0056b3 100%);
+}
+
+.icon-contact {
+  background: linear-gradient(135deg, var(--secondary) 0%, #20c997 100%);
+}
+
+.solution-card h3 {
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
-.cta-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  opacity: 0.9;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.solution-card p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #6c757d;
 }
 
-.btn-cta {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-  border: none;
-  padding: 18px 40px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin: 0 10px 15px;
+.solution-stats {
+  background: var(--light);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.solution-stats strong {
+  color: var(--primary);
+}
+
+/* Trust Section */
+.trust-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trust-item {
+  text-align: center;
+  padding: 30px;
+  background: var(--background);
+  border-radius: 15px;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
 }
 
-.btn-cta:hover {
+.trust-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(240, 147, 251, 0.4);
-  color: white;
+  box-shadow: var(--shadow);
+}
+
+.trust-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.trust-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.trust-detail {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Urgency Section */
+.urgency-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #212529 0%, #495057 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.urgency-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.urgency-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.urgency-text {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.urgency-email {
+  background: var(--accent);
+  color: var(--text);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.urgency-email:hover {
+  background: #e6ac00;
+  color: var(--text);
+  transform: scale(1.05);
+  text-decoration: none;
 }
 
 /* Responsive Design */
@@ -308,47 +398,49 @@ use-site-title: true
   }
   
   .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
     font-size: 1.1rem;
   }
   
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-cta {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .problems-grid,
+  .solutions-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
   
-  .section-title {
-    font-size: 2.2rem;
-  }
-  
-  .tech-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .problem-card, .solution-card {
-    padding: 30px;
-  }
-  
-  .hero-section, .cta-section {
-    margin-left: -15px;
-    margin-right: -15px;
+  .section-title,
+  .problem-title {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-content {
-    padding: 0 20px;
+  .hero-title {
+    font-size: 2rem;
   }
   
-  .btn-hero, .btn-hero-outline {
-    display: block;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 15px;
+  .hero-subtitle {
+    font-size: 1.3rem;
   }
   
-  .hero-stats {
-    grid-template-columns: 1fr;
+  .solution-card,
+  .problem-item,
+  .trust-item {
+    padding: 25px;
   }
 }
 </style>
@@ -356,203 +448,222 @@ use-site-title: true
 <!-- Hero Section -->
 <section class="hero-section">
   <div class="hero-content">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <h1 class="hero-title">
-          Solve Every<br>
-          <span style="background: linear-gradient(45deg, #fff, #e3f2fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Resource Planning</span><br>
-          Challenge
-        </h1>
-        <p class="hero-subtitle">
-          The world's most advanced software team planning platform. We've solved every bottleneck, 
-          eliminated every inefficiency, and created the ultimate resource optimization engine 
-          that delivers real-world accurate results.
-        </p>
-        <div class="hero-buttons">
-          <a href="{{ site.baseurl }}/demo" class="btn btn-hero">
-            <i class="fas fa-rocket me-2"></i>Experience The Revolution
-          </a>
-          <a href="{{ site.baseurl }}/blog" class="btn btn-hero-outline">
-            <i class="fas fa-brain me-2"></i>See The Science
-          </a>
+    <h1 class="hero-title">
+      Why Are Your Software Projects Always Delayed?
+    </h1>
+    <h2 class="hero-subtitle">
+      Discover 100% Real-World Compatible Planning Solutions
+    </h2>
+    <p class="hero-description">
+      The real planning system missing from project management and software resource planning applications. 
+      Try the demo app, read our blog posts, and contact us for more.
+    </p>
+    <div class="hero-buttons">
+      <a href="{{ site.baseurl }}/demo" class="btn-cta btn-primary">
+        🎯 Try Free Demo
+      </a>
+      <a href="mailto:contact@softwareplanner.dev" class="btn-cta btn-secondary">
+        💬 Contact Us
+      </a>
+      <a href="{{ site.baseurl }}/blog" class="btn-cta btn-tertiary">
+        📚 Read Blog Posts
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Statement Section -->
+<section class="problem-section">
+  <div class="container">
+    <h2 class="problem-title">
+      Sound Familiar? Let's Fix These Problems.
+    </h2>
+    
+    <div class="problems-grid">
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Sprint Deadlines Always Miss?</h3>
+        <p>Your team promises 2 weeks but delivers in 4 weeks. Every sprint takes longer than planned.</p>
+      </div>
+      
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Time Estimates Are Always Wrong?</h3>
+        <p>Developers say "2 hours" but spend 2 days. Planning meetings waste time with bad guesses.</p>
+      </div>
+      
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Team Members Fighting Over Tasks?</h3>
+        <p>Frontend developer stuck waiting. Backend developer overloaded. Wrong people on wrong tasks.</p>
+      </div>
+      
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Bugs Found After Release?</h3>
+        <p>No time for testing during sprint. Quality issues reach customers. Emergency fixes every week.</p>
+      </div>
+      
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Developers Working Nights and Weekends?</h3>
+        <p>Team burnout from impossible deadlines. Good developers leaving for better work-life balance.</p>
+      </div>
+      
+      <div class="problem-item">
+        <div class="icon">❌</div>
+        <h3>Client Meetings Always Bad News?</h3>
+        <p>Explaining delays every week. Clients losing trust. Project budgets going over limits.</p>
+      </div>
+    </div>
+    
+    <div class="solution-highlight">
+      <h3>✅ Discover the system that solves ALL planning challenges for software teams</h3>
+      <p>Stop guessing. Start planning with precision. Join teams achieving 15-40% productivity improvements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Solution Showcase Section -->
+<section class="solution-section">
+  <div class="container">
+    <h2 class="section-title">Three Ways to Transform Your Planning</h2>
+    
+    <div class="solutions-grid">
+      
+      <!-- Demo Application -->
+      <div class="solution-card demo-card">
+        <div class="solution-icon icon-demo">
+          🚀
+        </div>
+        <h3>Interactive Demo App</h3>
+        <p>Experience real resource planning with our live demo. See exactly how professional teams optimize their sprints.</p>
+        
+        <div class="solution-stats">
+          <strong>Live Working Example</strong><br>
+          4-step planning process<br>
+          Real-time Gantt charts<br>
+          Instant optimization results
         </div>
         
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">Zero</span>
-            <span class="stat-label">Competitors</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">47+</span>
-            <span class="stat-label">Parameters</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">98.7%</span>
-            <span class="stat-label">Accuracy</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">Real-Time</span>
-            <span class="stat-label">Learning</span>
-          </div>
-        </div>
+        <a href="{{ site.baseurl }}/demo" class="btn-cta btn-primary">
+          Try Demo Now
+        </a>
       </div>
-      <div class="col-lg-4 text-center">
-        <div style="font-size: 12rem; opacity: 0.1;">
-          <i class="fas fa-brain"></i>
+      
+      <!-- Blog Content -->
+      <div class="solution-card blog-card">
+        <div class="solution-icon icon-blog">
+          📚
         </div>
+        <h3>Expert Blog Content</h3>
+        <p>Deep-dive articles based on real-world experience. Learn the science behind effective resource planning.</p>
+        
+        <div class="solution-stats">
+          <strong>50+ Articles, 200+ Hours Experience</strong><br>
+          Advanced planning strategies<br>
+          Case studies & examples<br>
+          Proven methodologies
+        </div>
+        
+        <div style="text-align: left; margin: 20px 0; font-size: 0.9rem;">
+          <strong>Latest Posts:</strong>
+          {% for post in site.posts limit:2 %}
+          <div style="margin: 8px 0;">
+            <a href="{{ post.url | relative_url }}" style="color: var(--tertiary); text-decoration: none;">
+              • {{ post.title | truncate: 50 }}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+        
+        <a href="{{ site.baseurl }}/blog" class="btn-cta btn-tertiary">
+          Read All Posts
+        </a>
       </div>
+      
+      <!-- Contact & Consultation -->
+      <div class="solution-card contact-card">
+        <div class="solution-icon icon-contact">
+          💬
+        </div>
+        <h3>Personal Consultation</h3>
+        <p>Get customized solutions for your specific team challenges. We'll analyze your workflow and provide actionable recommendations.</p>
+        
+        <div class="solution-stats">
+          <strong>Personalized Analysis</strong><br>
+          Describe your team problems<br>
+          Detail your team dynamics<br>
+          Explain your dev processes<br>
+          Get custom recommendations
+        </div>
+        
+        <a href="mailto:abcdef@gmail.com" class="btn-cta btn-secondary">
+          Contact Expert
+        </a>
+      </div>
+      
     </div>
   </div>
 </section>
 
-<!-- Problem vs Solution -->
-<section class="problem-solution">
+<!-- Trust Building Section -->
+<section class="trust-section">
   <div class="container">
-    <h2 class="section-title">Why Every Other Solution Fails</h2>
-    <p class="section-subtitle">
-      Traditional planning tools treat symptoms, not root causes. We've identified and solved 
-      every fundamental challenge in software team resource management.
-    </p>
+    <h2 class="section-title">Proven Results Across Organizations</h2>
     
-    <div class="row">
-      <div class="col-lg-6 mb-4">
-        <div class="problem-card">
-          <div class="card-icon">
-            <i class="fas fa-exclamation-triangle"></i>
-          </div>
-          <h3 class="card-title">The Planning Nightmare</h3>
-          <ul class="feature-list">
-            <li>Manual resource allocation takes hours weekly</li>
-            <li>Skill mismatches create 40% productivity loss</li>
-            <li>Priority conflicts cause constant re-planning</li>
-            <li>Support time estimations are always wrong</li>
-            <li>Dependencies create cascading delays</li>
-            <li>Team capacity is impossible to predict accurately</li>
-            <li>Real vs planned performance gap widens over time</li>
-          </ul>
-        </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-number">📊</span>
+        <div class="trust-label">Battle-Tested Methods</div>
+        <div class="trust-detail">Applied across multiple software companies with consistent success</div>
       </div>
       
-      <div class="col-lg-6 mb-4">
-        <div class="solution-card">
-          <div class="card-icon">
-            <i class="fas fa-check-circle"></i>
-          </div>
-          <h3 class="card-title">Our Comprehensive Solution</h3>
-          <ul class="feature-list">
-            <li>AI-powered automatic optimization in seconds</li>
-            <li>Precision skill-to-task matching algorithm</li>
-            <li>Dynamic priority-based resource reallocation</li>
-            <li>Intelligent support time prediction engine</li>
-            <li>Advanced dependency chain analysis</li>
-            <li>Real-time capacity forecasting with 98.7% accuracy</li>
-            <li>Continuous learning from planned vs actual data</li>
-          </ul>
-        </div>
+      <div class="trust-item">
+        <span class="trust-number">100+</span>
+        <div class="trust-label">Sprint Plannings</div>
+        <div class="trust-detail">Real-world experience optimizing development cycles</div>
+      </div>
+      
+      <div class="trust-item">
+        <span class="trust-number">15-40%</span>
+        <div class="trust-label">Efficiency Improvement</div>
+        <div class="trust-detail">Minimum 15%, average 40% productivity gains achieved</div>
+      </div>
+      
+      <div class="trust-item">
+        <span class="trust-number">⭐</span>
+        <div class="trust-label">Predictable Planning</div>
+        <div class="trust-detail">Trackable and foreseeable project timelines</div>
+      </div>
+      
+      <div class="trust-item">
+        <span class="trust-number">🚨</span>
+        <div class="trust-label">Early Problem Detection</div>
+        <div class="trust-detail">Take action when things go wrong in early stages</div>
+      </div>
+      
+      <div class="trust-item">
+        <span class="trust-number">🎯</span>
+        <div class="trust-label">Self-Improving System</div>
+        <div class="trust-detail">Continuously learns from actual vs planned values</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Technology Advantages -->
-<section class="technology-section">
-  <div class="container">
-    <h2 class="section-title">Unmatched Technology Stack</h2>
-    <p class="section-subtitle">
-      Built from the ground up to handle the complexity that breaks other planning tools.
+<!-- Urgency Section -->
+<section class="urgency-section">
+  <div class="urgency-content">
+    <h2 class="urgency-title">
+      🔥 Ready to Transform Your Team Today?
+    </h2>
+    <p class="urgency-text">
+      Contact <a href="mailto:contact@softwareplanner.dev" class="urgency-email">contact@softwareplanner.dev</a> 
+      and implement this system in your company within one day.
     </p>
-    
-    <div class="tech-grid">
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-brain"></i>
-        </div>
-        <h4 class="tech-title">Intelligent Resource Engine</h4>
-        <p class="tech-description">
-          Our proprietary algorithm analyzes 47+ parameters including skill levels, 
-          availability patterns, historical performance, and team dynamics to create 
-          optimal resource allocations that adapt in real-time.
-        </p>
-      </div>
-      
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h4 class="tech-title">Predictive Analytics Core</h4>
-        <p class="tech-description">
-          Advanced forecasting models that learn from your team's planned vs actual 
-          performance data, continuously improving accuracy and providing 
-          early warning systems for potential bottlenecks.
-        </p>
-      </div>
-      
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-sync-alt"></i>
-        </div>
-        <h4 class="tech-title">Dynamic Optimization Loop</h4>
-        <p class="tech-description">
-          Real-time replanning capability that automatically adjusts resource 
-          allocations as priorities shift, team members become unavailable, 
-          or task estimates change without manual intervention.
-        </p>
-      </div>
-      
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-microscope"></i>
-        </div>
-        <h4 class="tech-title">Precision Gantt Visualization</h4>
-        <p class="tech-description">
-          Hour-by-hour resource visualization with intelligent color coding, 
-          dependency mapping, and interactive drill-down capabilities that 
-          reveal insights impossible to see in traditional project tools.
-        </p>
-      </div>
-      
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h4 class="tech-title">Risk Mitigation System</h4>
-        <p class="tech-description">
-          Proactive identification of resource conflicts, skill bottlenecks, 
-          and timeline risks with automated suggestion engine for 
-          preventive actions before problems impact delivery.
-        </p>
-      </div>
-      
-      <div class="tech-card">
-        <div class="tech-icon">
-          <i class="fas fa-graduation-cap"></i>
-        </div>
-        <h4 class="tech-title">Continuous Learning AI</h4>
-        <p class="tech-description">
-          Machine learning algorithms that analyze your team's performance 
-          patterns, identify improvement opportunities, and automatically 
-          fine-tune future planning recommendations.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action -->
-<section class="cta-section">
-  <div class="container">
-    <h2 class="cta-title">Ready to End Planning Chaos?</h2>
-    <p class="cta-subtitle">
-      Experience the future of software team resource planning. 
-      See why leading teams choose our platform over every alternative.
+    <p style="font-size: 1rem; opacity: 0.8; margin-top: 20px;">
+      Stop wasting time on ineffective planning. Start delivering predictable results.
     </p>
-    <div class="cta-buttons">
-      <a href="{{ site.baseurl }}/demo" class="btn btn-cta">
-        <i class="fas fa-play me-2"></i>Start Advanced Demo
-      </a>
-      <a href="{{ site.baseurl }}/blog" class="btn btn-cta">
-        <i class="fas fa-book-open me-2"></i>Read Success Stories
-      </a>
-    </div>
   </div>
 </section>
