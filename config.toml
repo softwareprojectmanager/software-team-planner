@@ -1,0 +1,14 @@
+[module]
+[[module.mounts]]
+source = "_posts"
+target = "content/posts"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod"]
+lastmod = [":git", "lastmod", "date", "publishDate"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
