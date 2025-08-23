@@ -1,11 +1,14 @@
-baseURL: 'https://YOUR-USERNAME.github.io/YOUR-REPO-NAME'
-languageCode: 'en-us'
+baseURL: 'https://softwareprojectmanager.github.io/software-team-planner'
+languageCode: 'en-us' 
 title: 'Software Planning Excellence'
-theme: 'PaperMod'
+# theme: 'PaperMod'    ← COMMENT ET
+
+paginate: 10
+enableRobotsTXT: true
 
 # Jekyll uyumluluğu için
 contentDir: "."
-#layoutDir: "themes/PaperMod/layouts"
+# layoutDir: "themes/PaperMod/layouts"  ← COMMENT ET
 
 # Jekyll posts'ları oku
 permalinks:
