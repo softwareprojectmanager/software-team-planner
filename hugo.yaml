@@ -1,7 +1,7 @@
 baseURL: 'https://YOUR-USERNAME.github.io/YOUR-REPO-NAME'
 languageCode: 'en-us'
 title: 'Software Planning Excellence'
-#theme: 'PaperMod'
+theme: 'PaperMod'
 
 # Jekyll uyumluluğu için
 contentDir: "."
