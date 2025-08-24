@@ -1,0 +1,89 @@
+baseURL: 'https://softwareprojectmanager.github.io/software-team-planner'
+languageCode: 'en-us'
+title: 'Software Planning Excellence'
+theme: 'PaperMod'
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+paginate: 10
+defaultContentLanguage: 'en'
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Posts
+      url: /posts/
+      weight: 2
+    - name: Demo
+      url: /demo/
+      weight: 3
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: github
+
+params:
+  env: production
+  title: "Software Planning Excellence"
+  description: "Comprehensive insights on software team resource planning, sprint optimization, and development workflow improvement."
+  keywords: [software planning, sprint optimization, team management, agile, scrum]
+  author: "Software Planning Excellence Team"
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  profileMode:
+    enabled: true
+    title: "Software Planning Excellence"
+    subtitle: "Transform your development workflow with data-driven planning solutions"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: "Software Planning Excellence"
+    buttons:
+      - name: Blog Posts
+        url: posts
+      - name: Resource Planner Demo
+        url: demo
+
+  homeInfoParams:
+    Title: "Welcome to Software Planning Excellence"
+    Content: >
+      Comprehensive insights on software team resource planning, sprint optimization, 
+      and development workflow improvement. Our 15-part analysis covers problems, 
+      solutions, and synthesis for better development planning.
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
